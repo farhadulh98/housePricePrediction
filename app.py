@@ -1,10 +1,8 @@
-#from sklearn.linear_model._base import _preprocess_data
 import flask
 import pickle
 import pandas as pd
-with open('model/USA_Housing_Model.pkl', 'rb') as f:
-   model = pickle.load(f)
-
+with open(f'model/USA_Housing_Model.pkl', 'rb') as f:
+    model = pickle.load(f)
 app = flask.Flask(__name__, template_folder='templates')
 
 @app.route('/', methods=['GET', 'POST'])
